@@ -1,0 +1,6 @@
+# Archivos generados automaticamente
+reportes/
+#Caché de Python
+__pycache_/
+
+*pyc

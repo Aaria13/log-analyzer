@@ -1,0 +1,12 @@
+INFO Iniciando sistema
+INFO Autenticación de usuario
+WARNING Memoria empieza sobrecarga 75%
+ERROR Falla de conexión
+INFO Reiniciando sistema
+ERROR Timeout en reinicio
+INFO Iniciando sistema
+INFO Autenticación de usuario
+INFO Conectando a la base de datos
+ERROR Falla en conexión a la base de datos
+ERROR Timeout al consultar API
+INFO Usuario finaliza sesión
