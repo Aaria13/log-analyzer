@@ -9,8 +9,18 @@ for linea in archivo:
         print(linea)
 
 archivo.close()
-
-
-
 print(len(errores))
 print(errores)
+
+informe = open("reportes/errores.txt", "w")
+
+
+for error in errores:
+        informe.write(error)
+        print(error)
+
+informe.close()
+        
+        
+
+
