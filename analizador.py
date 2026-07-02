@@ -1,7 +1,16 @@
 archivo = open("logs/servidor.log", "r")
 
-contenido = archivo.read()
+
+errores = []
+
+for linea in archivo:
+    if "ERROR" in linea:
+        errores.append(linea)
+        print(linea)
 
 archivo.close()
 
-print(contenido)
+
+
+print(len(errores))
+print(errores)
