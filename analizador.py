@@ -1,26 +1,16 @@
-archivo = open("logs/servidor.log", "r")
-
-
 errores = []
 
-for linea in archivo:
-    if "ERROR" in linea:
-        errores.append(linea)
-        print(linea)
-
-archivo.close()
-print(len(errores))
-print(errores)
-
-informe = open("reportes/errores.txt", "w")
+with open("logs/servidor.log", "r") as archivo:
+    for linea in archivo:
+        if "ERROR" in linea:
+            errores.append(linea)
+            print(linea)
 
 
-for error in errores:
-        informe.write(error)
-        print(error)
+with open("reportes/errores.txt", "w")as informe:
+    for error in errores:
+            informe.write(error)
+            print(error)
 
-informe.close()
+
         
-        
-
-
