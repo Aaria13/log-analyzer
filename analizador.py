@@ -14,9 +14,10 @@ try:
     print("informe generado")        
 
 except FileNotFoundError as inexixtente:
-        print("Archivo no existe: ", inexixtente)
+        print("No fue posible acceder al archivo. \n Morivo: El archivo no existe", inexixtente)
 
-
+except PermissionError as sin_permisos:
+     print("No fue posible acceder al archivo. \n Verifique los permisos de lectura o escritura.")
             
 
 
