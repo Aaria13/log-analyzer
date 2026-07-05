@@ -16,7 +16,7 @@ try:
 except FileNotFoundError as inexixtente:
         print("No fue posible acceder al archivo. \n Morivo: El archivo no existe", inexixtente)
 
-except PermissionError as sin_permisos:
+except PermissionError as denegado:
      print("No fue posible acceder al archivo. \n Verifique los permisos de lectura o escritura.")
             
 

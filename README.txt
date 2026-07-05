@@ -49,7 +49,7 @@ log-analyzer/
 * ✅ Sprint 1 - Lectura completa del archivo de log
 * ✅ Sprint 2 - Filtrado de errores
 * ✅ Sprint 3 - Generación de reportes
-* ⏳ Sprint 4 - Manejo de excepciones
+* ✅ Sprint 4 - Manejo de excepciones
 * ⏳ Sprint 5 - Configuración mediante JSON
 * ⏳ Sprint 6 - Refactorización con Programación Orientada a Objetos
 * ⏳ Sprint 7 - Persistencia de estadísticas
