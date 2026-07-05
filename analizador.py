@@ -1,14 +1,23 @@
 errores = []
 
-with open("logs/servidor.log", "r") as archivo:
-    for linea in archivo:
-        if "ERROR" in linea:
-            errores.append(linea)
+try:
 
+    with open("logs/servidor.log", "r") as archivo:
+        for linea in archivo:
+            if "ERROR" in linea:
+                errores.append(linea)
+    print("lectura exitosa")            
 
-with open("reportes/errores.txt", "w")as informe:
-    for error in errores:
+    with open("reportes/errores.txt", "w")as informe:
+        for error in errores:
             informe.write(error)
+    print("informe generado")        
+
+except FileNotFoundError as inexixtente:
+        print("No fue posible acceder al archivo. \n Morivo: El archivo no existe", inexixtente)
+
+except PermissionError as sin_permisos:
+     print("No fue posible acceder al archivo. \n Verifique los permisos de lectura o escritura.")
             
 
 
