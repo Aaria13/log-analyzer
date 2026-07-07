@@ -1,14 +1,19 @@
+import json # Se importa el módulo json para trabajar cona rchivos JSON y convertirlos en onjetos de Python
+
 errores = []
 
 try:
+    # with open() conexión con archivo objeto tipo file en cual almacenamos
+    with open("config.json", "r") as config_file:
+         config = json.load(config_file) #Lectura de JSON y convierte en un objeto de Python
 
-    with open("logs/servidor.log", "r") as archivo:
+    with open(config["ruta_logs"], "r") as archivo:
         for linea in archivo:
             if "ERROR" in linea:
                 errores.append(linea)
     print("lectura exitosa")            
 
-    with open("reportes/errores.txt", "w")as informe:
+    with open(config["ruta_reporte"], "w")as informe:
         for error in errores:
             informe.write(error)
     print("informe generado")        
