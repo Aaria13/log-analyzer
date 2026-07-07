@@ -16,14 +16,17 @@ try:
     with open(config["ruta_reporte"], "w")as informe:
         for error in errores:
             informe.write(error)
-    print("informe generado")        
+    print("informe generado") 
+
+except json.JSONDecodeError:
+     print("Error en el archivo de configuración. \n El archivo config.json tiene un formato JSON inválido. \n Revise la sintaxis del archivo.")                  
 
 except FileNotFoundError as inexixtente:
         print("No fue posible acceder al archivo. \n Morivo: El archivo no existe", inexixtente)
 
 except PermissionError as denegado:
-     print("No fue posible acceder al archivo. \n Verifique los permisos de lectura o escritura.")
-            
+     print("No fue posible acceder al archivo. \n Verifique los permisos de lectura o escritura.")          
 
+      
 
         
