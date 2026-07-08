@@ -1,0 +1,4 @@
+{
+    "ruta_logs": "logs/servidor.log",
+    "ruta_reporte": "reportes/errores.txt"
+}
