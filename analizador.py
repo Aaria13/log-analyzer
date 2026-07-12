@@ -1,4 +1,4 @@
-import json # Se importa el módulo json para trabajar cona rchivos JSON y convertirlos en onjetos de Python
+import json # Se importa el módulo json para trabajar con archivos JSON y convertirlos en objetos de Python
 import csv 
 
 errores = []
@@ -23,6 +23,18 @@ try:
     with open("reportes/errores.csv", "w") as informe_csv:
          escritor = csv.writer(informe_csv)
          escritor.writerow(headers)
+         contador = 0
+
+         for error in errores:
+              contador = contador + 1 
+              fila = error.split(" ", 1) #Cómo guardo el resultado de split?
+              filas_csv = [
+                   contador,
+                   fila[0],
+                   fila[1]
+              ]
+              escritor.writerow(filas_csv)
+              print(filas_csv)         
 
 except json.JSONDecodeError:
      print("Error en el archivo de configuración. \n El archivo config.json tiene un formato JSON inválido. \n Revise la sintaxis del archivo.")                  
