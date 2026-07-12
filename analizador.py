@@ -6,35 +6,35 @@ headers = ["Línea", "Tipo", "Mensaje"]
 
 try:
     # with open() conexión con archivo objeto tipo file en cual almacenamos
-    with open("config.json", "r") as config_file:
+    with open("config.json", "r", encoding="utf-8") as config_file:
          config = json.load(config_file) #Lectura de JSON y convierte en un objeto de Python
 
-    with open(config["ruta_logs"], "r") as archivo:
+    with open(config["ruta_logs"], "r", encoding="utf-8") as archivo:
         for linea in archivo:
             if "ERROR" in linea:
                 errores.append(linea)
     print("lectura exitosa")            
 
-    with open(config["ruta_reporte"], "w")as informe:
+    with open(config["ruta_reporte_txt"], "w", encoding="utf-8")as informe:
         for error in errores:
             informe.write(error)
     print("informe generado") 
     
-    with open("reportes/errores.csv", "w") as informe_csv:
-         escritor = csv.writer(informe_csv)
+    with open(config["ruta_reporte_csv"], "w", encoding="utf-8", newline="") as informe_csv:
+         escritor = csv.writer(informe_csv, delimiter=";" )
          escritor.writerow(headers)
          contador = 0
 
          for error in errores:
               contador = contador + 1 
               fila = error.split(" ", 1) #Cómo guardo el resultado de split?
-              filas_csv = [
+              fila_csv = [
                    contador,
                    fila[0],
                    fila[1]
               ]
-              escritor.writerow(filas_csv)
-              print(filas_csv)         
+              escritor.writerow(fila_csv)
+              print(fila_csv)         
 
 except json.JSONDecodeError:
      print("Error en el archivo de configuración. \n El archivo config.json tiene un formato JSON inválido. \n Revise la sintaxis del archivo.")                  
