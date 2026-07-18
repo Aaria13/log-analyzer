@@ -45,6 +45,5 @@ except FileNotFoundError as inexixtente:
 except PermissionError as denegado:
      print("No fue posible acceder al archivo. \n Verifique los permisos de lectura o escritura.")          
       
-    
 
         
